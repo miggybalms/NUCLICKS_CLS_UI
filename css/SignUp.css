@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
-    background-image: url("../assets/background_white.jpg");
+    background-image: url("../assets/background_blue.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; /* ✅ BEST OPTION */
@@ -17,11 +17,11 @@ body {
     width: auto;
     /* overflow: hidden; */
 }
-.login-container {
+.signup-container {
     position: relative;  /* FIX */
     right: 0;            /* REMOVE */
     z-index: 2;
-    background-color: #32418c;
+    background-color: #ffffff;
     width: 100%;
     max-width: 550px;
     height: auto;
@@ -31,11 +31,11 @@ body {
     padding-right: 2.5rem;
     box-shadow: 0px 6px 20px rgba(0,0,0,0.35);
 }
-.login-container {
+.signup-container {
 
     z-index: 3;
 }
-.login-container-content{
+.signup-container-content{
     width: 100%;
     height: 100%;
     display: flex;
@@ -43,7 +43,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-.logo-login-container {
+.logo-signup-container {
     width: 50%;
     margin: 0 auto 10px;
     display: block;
@@ -53,16 +53,31 @@ body {
 }
 .welcome-message {
     font-family: 'Poppins', sans-serif;
-    color: #ffffff;
+    color: #32418c;
     font-weight: 500;
     font-size: 25px;
     text-align: center;
     line-height: 1.1;
-    margin: 1px;
 }
-.bark {
-    font-weight: 700;
-    color: #fbd117;
+
+.join-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #2e3a8c; /* NU blue */
+  text-align: center;
+}
+
+.highlight-text {
+  background-color: #fbd117; /* NU yellow */
+  color: #2e3a8c;
+  padding: 0 6px;
+  font-weight: 700;
+}
+
+.subtitle {
+    font-size: 15px;
+    text-align: center;
 }
 
 label {
@@ -70,51 +85,63 @@ label {
     font-size: 17px;
     margin-top: 5px;
     margin-bottom: 5px;
-    color: #ffffff;
+    color: #1E1E1E;
 }
 
-.login-fields {
+.signup-fields {
   display: flex;
   flex-direction: column;
   justify-content: center; /* horizontal */
  
 }
 /* TEXT FIELD */
-.login-textfield {
+.signup-textfield {
     width: 100%;
     padding: 14px 16px;
     margin: 0 0 15px;
-    border: none;
+    border: 1px solid #1E1E1E;
     border-radius: 10px;
     background-color: #ffffff;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
     outline: none;
     display: block;
 
     box-sizing: border-box; /* ✅ FIX */
 }
 /* PLACEHOLDER STYLE */
-.login-textfield::placeholder {
+.signup-textfield::placeholder {
     color: #777;
     font-weight: 400;
 }
 
+.field-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.field-with-label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+
 /* BUTTON */
-.login-btn {
+.signup-btn {
     width: 100%;
     padding: 14px;
     margin: 25px auto 0;
-    background-color: #fbd117;
-    color: #32418c;
+    background-color: #32418c;
+    color: #fbd117;
     border-radius: 10px;
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     cursor: pointer;
     display: block;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
     transition: 0.2s;
     
     text-decoration: none;
@@ -125,25 +152,20 @@ label {
     box-sizing: border-box; /* ✅ FIX */
 
 }
-.login-btn:hover {
-    background-color: #e0bd0c;
+.signup-btn:hover {
+    background-color: #283470;
 }
-.forgot-password {
-    font-size: 14px;
-    margin: 1px;
-    margin-bottom: 10px;
-    text-align: end;
-}
+
 .have-account {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    color: #ffffff;
+    color: #32418c;
     font-size: 15px;
     text-align: center;
 }
 .have-account-signin {
     font-family: 'Poppins', sans-serif;
-    color: #fbd117;
+    color: #32418c;
     font-weight: 500;
     font-size: 15px;
     text-decoration: none;
