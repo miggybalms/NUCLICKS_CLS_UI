@@ -41,3 +41,125 @@
     background-color: #FBD117;
     color: #303781;
 }
+
+/* CONTENT FOR STUDENT DASHBOARD */
+.dashboard-panel {
+    font-family: 'Poppins', sans-serif;
+    padding: 30px 20px 30px 20px;
+    
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.dashboard-left {
+  flex: 8;               
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-right {
+  flex: 2;                 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ITEMS INSIDE DASHBOARD LEFT */
+.dashboard-left-heading {
+    width: 100%;
+    display: flex;
+    align-items: center; /* ✅ vertical centering */
+    gap: 16px;
+}
+.logo-student-db {
+    display: flex;
+    align-items: center; /* ✅ aligns logo & text */
+    gap: 0px;
+    color: #303781;
+    font-weight: 500;
+}
+.logo-head {
+    height: 50px;     /* ✅ control logo size */
+    width: auto;
+}
+.title-head {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.title-text {
+    margin: 0;
+    font-size: 18px;
+}
+.enrolled-archived {
+  margin-left: auto; /* ✅ right-most */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px;
+  background-color: #ffffff;
+  border-radius: 999px;
+}
+
+/* Tabs */
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-weight: 600;
+  font-size: 14px;
+  color: #303781;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* Active tab */
+.tab.active {
+  background-color: #303781;
+  color: #ffffff;
+}
+
+/* Count badges */
+.count {
+  min-width: 24px;
+  height: 22px;
+
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Enrolled count (yellow) */
+.enrolled-count {
+  background-color: #FBD117;
+  color: #303781;
+}
+
+/* Archived count (outline style) */
+.archived-count {
+  border: 1.5px solid #303781;
+  color: #303781;
+  background-color: transparent;
+}
+
+/* Active archived badge (optional for switching state) */
+.tab.active .archived-count {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+/* ITEMS INSIDE DASHBOARD RIGHT */
