@@ -8,7 +8,7 @@
 }
 
 
-/* CONTENT FOR STUDENT DASHBOARD */
+/* CONTENT FOR STUDENT CLASS DASHBOARD */
 .dashboard-panel {
     font-family: 'Poppins', sans-serif;
     padding: 30px 20px 30px 20px;
@@ -55,205 +55,30 @@
 .title-head {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+    line-height: 30px;
+    margin: 0 0 0 10px;
 }
-.title-text {
+.course-title {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: 700;
 }
-.enrolled-archived {
-  margin-left: auto; /* ✅ right-most */
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.instructor {
+    font-size: 16px;
+    font-weight: 400;
+    color: #424242;
 
-  padding: 8px;
-  background-color: #ffffff;
-  border-radius: 999px;
+    margin: 0px;
+    padding: 0px;
 }
-
-/* Tabs */
-.tab {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  padding: 6px 14px;
-  border-radius: 999px;
-
-  font-weight: 600;
-  font-size: 14px;
-  color: #303781;
-  cursor: pointer;
-
-  transition: 0.2s ease;
+.instructor-name {
+    font-weight: 700;
 }
 
-/* Active tab */
-.tab.active {
-  background-color: #303781;
-  color: #ffffff;
-}
-
-/* Count badges */
-.count {
-  min-width: 24px;
-  height: 22px;
-
-  padding: 0 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-/* Enrolled count (yellow) */
-.enrolled-count {
-  background-color: #FBD117;
-  color: #303781;
-}
-
-/* Archived count (outline style) */
-.archived-count {
-  border: 1.5px solid #303781;
-  color: #303781;
-  background-color: transparent;
-}
-
-/* Active archived badge (optional for switching state) */
-.tab.active .archived-count {
-  border-color: #ffffff;
-  color: #ffffff;
-}
 
 /* CARDS/ITEMS FOR THE ENROLLED CLASSES */
 
-/* CLASSES GRID */
-.classes-container {
-  margin-top: 10px;
-}
-
-.classes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* Tablet */
-@media (max-width: 1200px) {
-  .classes-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .classes-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* CLASS CARD */
-.class-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.class-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* IMAGE */
-.class-image {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-}
-
-/* CONTENT */
-.class-content {
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.class-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #303781;
-  margin: 0;
-  line-height: 1.3;
-}
-
-/* PROGRESS */
-.progress-section {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.progress-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.progress-percent {
-  font-size: 12px;
-  font-weight: 600;
-  color: #303781;
-}
-
-/* RESUME BUTTON */
-.resume-btn {
-  background-color: #FBD117;
-  border: none;
-  border-radius: 999px;
-  padding: 4px 10px;
-
-  font-size: 11px;
-  font-weight: 700;
-  color: #303781;
-  cursor: pointer;
-}
-
-.resume-btn:hover {
-  background-color: #f6c800;
-}
-
-/* PROGRESS BAR */
-.progress-bar {
-  height: 6px;
-  background-color: #e6e6e6;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #303781;
-  border-radius: 999px;
-}
-
-/* META INFO */
-.class-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: #666666;
-}
 
 /* ITEMS INSIDE DASHBOARD RIGHT */
 .notif-info-container {
