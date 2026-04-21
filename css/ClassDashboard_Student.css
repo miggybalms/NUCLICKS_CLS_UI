@@ -14,15 +14,26 @@ html, body {
 
 
 /* CONTENT FOR STUDENT CLASS DASHBOARD */
-.dashboard-panel {
+/* .dashboard-panel {
     font-family: 'Poppins', sans-serif;
     padding: 30px 20px;
     
     width: 100%;
-    height: 100%; /* important */
+    height: 100%;
     display: flex;
     flex-direction: row;
     gap: 30px;
+} */
+ .dashboard-left {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
+    padding-bottom: 20px; /* new */
 }
 
 .dashboard-left {
@@ -106,6 +117,16 @@ html, body {
     font-weight: 700;
 }
 
+/* .instructor-post {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 0 0 10px 10px;
+} */
 .instructor-post {
     display: flex;
     flex-direction: column;
@@ -114,8 +135,9 @@ html, body {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 15px;
-    margin: 0 0 0 10px;
+    margin-left: 10px; /* changed from margin: 0 0 10px 10px */
 }
+
 .instructor-details {
     font-family: 'Poppins', sans-serif;
     display: flex;
