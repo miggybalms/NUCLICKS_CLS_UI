@@ -3,141 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard | NUCLICKS</title>
+    <title>Create Post-Test | NUCLICKS Teacher</title>
 
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/StudentDashboard.css">
-
-    <link rel="stylesheet" href="css/ClassDashboard_Teacher.css">
+    <link rel="stylesheet" href="css/CreatePrePostTest.css">
     <link rel="icon" href="assets/logos/NU_ICON_Blue.png">
 </head>
 <body>
     <div class="layout-wrapper">
         <div class="sidebar-menu">
-            <img class="sidebar-menu-icon" src="assets/logos/NU_ICON_White.png" alt="NULP Logo">
+            <img class="sidebar-menu-icon" src="assets/logos/NU_ICON_White.png" alt="NU Logo">
+
             <a href="StudentDashboard.html" class="sidebar-menu-content">
-                <img src="assets/icons/home-white.svg" alt="Calendar" class="menu-icon"/>
+                <img src="assets/icons/home-white.svg" alt="Home" class="menu-icon">
                 Home
             </a>
-            <a href="" class="sidebar-menu-content current">
-                <img src="assets/icons/class-blue.svg" alt="Calendar" class="menu-icon"/>
+
+            <a href="#" class="sidebar-menu-content current">
+                <img src="assets/icons/class-blue.svg" alt="Classes" class="menu-icon">
                 Classes
             </a>
         </div>
+
         <div class="dashboard-panel">
-            <div class="dashboard-left">
-               
-                <div class="title-head">    
-                    <p class="course-title">Introduction to Computer System</p>
-                    <p class="instructor">Class Instructor: <span class="instructor instructor-name">Louie E. Gutierrez</span></p>
-                </div>
-
-
-                <div class="instructor-post">
-                    <div class="instructor-details">
-                        <img src="assets/sample_user.jpg" alt="Instructor Photo" class="instructor-photo-post">
-                        <p class="instructor-name-post">Louie Andrew E. Gutierrez</p>
-                        <p class="date-time-posted">Yesterday 7:42 AM</p>
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Create Post-Test</h1>
+                        <p>Build a post-test form for your class assessment.</p>
                     </div>
-                    <div class="post-title-description">
-                        <p class="post-title">Good Morning, Students!</p>
-                        <p class="post-description">This is just a post</p>
+
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" type="button">Preview</button>
+                        <button class="btn btn-primary" type="button">Save Form</button>
                     </div>
                 </div>
 
-                
+                <div class="builder-wrapper">
+                    <div class="form-builder-card">
 
-
-            </div>
-            <div class="dashboard-right">
-                <div class="notif-info-container">
-                    <div class="notif-bell-wrapper">
-                        <img src="assets/icons/bell.svg" alt="Notifications" class="notif-bell-icon">
-
-                        <span class="notif-badge">17</span>
-                    </div>
-
-                    <div class="user-info">
-                        <div class="user-name-email">
-                            <p class="user-name">Stalin, Joseph</p>
-                            <p class="user-email">josephstalin@gmail.com</p>
+                        <!-- FORM BANNER -->
+                        <div class="form-banner">
+                            <img src="assets/logos/NU_Logo_Header.png" alt="National University Banner">
+                            <button type="button" class="banner-edit-btn">✎</button>
                         </div>
-                        <div class="user-photo-wrapper">
-                        <img src="assets/sample_user.jpg" alt="Sample User" class="user-photo">
 
-                            <button class="user-status-toggle">✓</button>
+                        <!-- FORM DETAILS -->
+                        <div class="form-main-details">
+                            <label for="formTitle">Test Title</label>
+                            <input type="text" id="formTitle" value="Post-Test Form">
 
-                            <!-- DROPDOWN -->
-                            <div class="profile-dropdown">
-                                <a href="index.html" class="dropdown-item logout-btn">Logout</a>
+                            <label for="formDesc">Description</label>
+                            <textarea id="formDesc" rows="3" placeholder="Write a short description for this post-test..."></textarea>
+                        </div>
+
+                        <!-- SECTION 1 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-title-group">
+                                    <span class="section-badge">Section 1</span>
+                                    <input type="text" value="Multiple Choice" class="section-title-input">
+                                </div>
+                                <button class="mini-btn" type="button">+ Add Question</button>
+                            </div>
+
+                            <!-- QUESTION 1 -->
+                            <div class="question-card">
+                                <div class="question-top">
+                                    <span class="question-label">Question 1</span>
+                                    <div class="question-controls">
+                                        <select>
+                                            <option selected>Multiple Choice</option>
+                                            <option>True or False</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <input type="text" class="question-input" placeholder="Insert the question here...">
+                                <input type="text" class="description-input" placeholder="Add Description">
+
+                                <div class="options-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option A">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option B">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option C">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option D">
+                                    </label>
+                                </div>
+                                
+                                <div class="answer-key-group">
+                                    <label for="correctAnswer1">Correct Answer</label>
+                                    <select id="correctAnswer1" class="correct-answer-select">
+                                        <option value="">Select correct answer</option>
+                                        <option>Option A</option>
+                                        <option>Option B</option>
+                                        <option>Option C</option>
+                                        <option>Option D</option>
+                                    </select>
+                                </div>
+
+                                <div class="question-footer">
+                                    <button type="button" class="text-btn">Duplicate</button>
+                                    <button type="button" class="text-btn danger">Delete</button>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- SECTION 2 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-title-group">
+                                    <span class="section-badge">Section 2</span>
+                                    <input type="text" value="True or False" class="section-title-input">
+                                </div>
+                                <button class="mini-btn" type="button">+ Add Question</button>
+                            </div>
+
+                            <!-- QUESTION 2 -->
+                            <div class="question-card">
+                                <div class="question-top">
+                                    <span class="question-label">Question 2</span>
+                                    <div class="question-controls">
+                                        <select>
+                                            <option>Multiple Choice</option>
+                                            <option selected>True or False</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <input type="text" class="question-input" placeholder="Insert the question here...">
+                                <input type="text" class="description-input" placeholder="Add Description">
+
+                                <div class="options-list true-false-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="q2" disabled>
+                                        <input type="text" value="True">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q2" disabled>
+                                        <input type="text" value="False">
+                                    </label>
+                                </div>
+                                
+                                <div class="answer-key-group">
+                                    <label for="correctAnswer2">Correct Answer</label>
+                                    <select id="correctAnswer2" class="correct-answer-select">
+                                        <option value="">Select correct answer</option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </div>
+
+                                <div class="question-footer">
+                                    <button type="button" class="text-btn">Duplicate</button>
+                                    <button type="button" class="text-btn danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BUILDER ACTIONS -->
+                        <div class="builder-actions">
+                            <button class="builder-action-btn" type="button">+ Add Question</button>
+                            <button class="builder-action-btn secondary" type="button">+ Add Section</button>
+                        </div>
+
                     </div>
                 </div>
-
-                <!-- TEACHER TOOLS -->
-                <div class="teacher-tools-container">
-                    <p class="tools-title">Tools</p>
-
-                    <a href="#" class="tool-btn">
-                        <img src="assets/icons/upload-white.svg">
-                        Upload Modules
-                    </a>
-
-                    <a href="CreateQuizzes.html" class="tool-btn">
-                        <img src="assets/icons/class-white.svg">
-                        Create Quizzes
-                    </a>
-
-                    <a href="#" class="tool-btn">
-                        <img src="assets/icons/class-white.svg">
-                        Create Venue Evaluation
-                    </a>
-
-                    <a href="CreatePreTest.html" class="tool-btn">
-                        <img src="assets/icons/class-white.svg">
-                        Create Class Pre-Test
-                    </a>
-
-                    <a href="CreatePostTest.html" class="tool-btn">
-                        <img src="assets/icons/class-white.svg">
-                        Create Class Post-Test
-                    </a>
-                </div>
-
-                <!-- STUDENT RANKING -->
-                <div class="ranking-container">
-                    <p class="ranking-title">Student Ranking</p>
-
-                    <ol class="ranking-list">
-                        <li>Stalin, Joseph</li>
-                        <li>Asado, Jude</li>
-                        <li>Romulo, Jerome</li>
-                        <li>Fernandez, Ivan</li>
-                        <li>De Guzman, Carlo</li>
-                    </ol>
-                </div>
-
             </div>
-
         </div>
     </div>
 
-    <script>
-    const userProfile = document.querySelector('.user-photo-wrapper');
-    const dropdown = document.querySelector('.profile-dropdown');
-
-    userProfile.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('active');
-    });
-
-    document.addEventListener('click', () => {
-    dropdown.classList.remove('active');
-    });
-
-    </script>
-
-
 </body>
-</html>

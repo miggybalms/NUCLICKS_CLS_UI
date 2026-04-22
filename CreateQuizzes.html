@@ -3,9 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Quiz Form | NUCLICKS Teacher</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/CreatePrePostTest.css">
+    <link rel="icon" href="assets/logos/NU_ICON_Blue.png">
 </head>
 <body>
-    
+    <div class="layout-wrapper">
+        <div class="sidebar-menu">
+            <img class="sidebar-menu-icon" src="assets/logos/NU_ICON_White.png" alt="NU Logo">
+
+            <a href="StudentDashboard.html" class="sidebar-menu-content">
+                <img src="assets/icons/home-white.svg" alt="Home" class="menu-icon">
+                Home
+            </a>
+
+            <a href="#" class="sidebar-menu-content current">
+                <img src="assets/icons/class-blue.svg" alt="Classes" class="menu-icon">
+                Classes
+            </a>
+        </div>
+
+        <div class="dashboard-panel">
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Create Quiz Form</h1>
+                        <p>Build a quiz form for your class assessment.</p>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" type="button">Preview</button>
+                        <button class="btn btn-primary" type="button">Save Form</button>
+                    </div>
+                </div>
+
+                <div class="builder-wrapper">
+                    <div class="form-builder-card">
+
+                        <!-- FORM BANNER -->
+                        <div class="form-banner">
+                            <img src="assets/logos/NU_Logo_Header.png" alt="National University Banner">
+                            <button type="button" class="banner-edit-btn">✎</button>
+                        </div>
+
+                        <!-- FORM DETAILS -->
+                        <div class="form-main-details">
+                            <label for="formTitle">Quiz Title</label>
+                            <input type="text" id="formTitle" value="Quiz Form">
+
+                            <label for="formDesc">Description</label>
+                            <textarea id="formDesc" rows="3" placeholder="Write a short description for this quiz..."></textarea>
+                        </div>
+
+                        <!-- SECTION 1 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-title-group">
+                                    <span class="section-badge">Section 1</span>
+                                    <input type="text" value="Multiple Choice" class="section-title-input">
+                                </div>
+                                <button class="mini-btn" type="button">+ Add Question</button>
+                            </div>
+
+                            <!-- QUESTION 1 -->
+                            <div class="question-card">
+                                <div class="question-top">
+                                    <span class="question-label">Question 1</span>
+                                    <div class="question-controls">
+                                        <select>
+                                            <option selected>Multiple Choice</option>
+                                            <option>True or False</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <input type="text" class="question-input" placeholder="Insert the question here...">
+                                <input type="text" class="description-input" placeholder="Add Description">
+
+                                <div class="options-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option A">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option B">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option C">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q1" disabled>
+                                        <input type="text" value="Option D">
+                                    </label>
+                                </div>
+                                
+                                <div class="answer-key-group">
+                                    <label for="correctAnswer1">Correct Answer</label>
+                                    <select id="correctAnswer1" class="correct-answer-select">
+                                        <option value="">Select correct answer</option>
+                                        <option>Option A</option>
+                                        <option>Option B</option>
+                                        <option>Option C</option>
+                                        <option>Option D</option>
+                                    </select>
+                                </div>
+
+                                <div class="question-footer">
+                                    <button type="button" class="text-btn">Duplicate</button>
+                                    <button type="button" class="text-btn danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-title-group">
+                                    <span class="section-badge">Section 2</span>
+                                    <input type="text" value="True or False" class="section-title-input">
+                                </div>
+                                <button class="mini-btn" type="button">+ Add Question</button>
+                            </div>
+
+                            <!-- QUESTION 2 -->
+                            <div class="question-card">
+                                <div class="question-top">
+                                    <span class="question-label">Question 2</span>
+                                    <div class="question-controls">
+                                        <select>
+                                            <option>Multiple Choice</option>
+                                            <option selected>True or False</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <input type="text" class="question-input" placeholder="Insert the question here...">
+                                <input type="text" class="description-input" placeholder="Add Description">
+
+                                <div class="options-list true-false-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="q2" disabled>
+                                        <input type="text" value="True">
+                                    </label>
+
+                                    <label class="option-item">
+                                        <input type="radio" name="q2" disabled>
+                                        <input type="text" value="False">
+                                    </label>
+                                </div>
+                                
+                                <div class="answer-key-group">
+                                    <label for="correctAnswer2">Correct Answer</label>
+                                    <select id="correctAnswer2" class="correct-answer-select">
+                                        <option value="">Select correct answer</option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </div>
+
+                                <div class="question-footer">
+                                    <button type="button" class="text-btn">Duplicate</button>
+                                    <button type="button" class="text-btn danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BUILDER ACTIONS -->
+                        <div class="builder-actions">
+                            <button class="builder-action-btn" type="button">+ Add Question</button>
+                            <button class="builder-action-btn secondary" type="button">+ Add Section</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
-</html>
