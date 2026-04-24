@@ -3,73 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-Test | NUCLICKS</title>
+    <title>Pre-Test | NUCLICKS Student</title>
 
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/SuperAdmin.css">
     <link rel="stylesheet" href="css/Student_PrePostQuiz.css">
     <link rel="icon" href="assets/logos/NU_ICON_Blue.png">
-
-    
 </head>
 <body>
-    <div class="layout-wrapper">
-        <div class="sidebar-menu">
-            <img class="sidebar-menu-icon" src="assets/logos/NU_ICON_White.png" alt="NULP Logo">
-            <a href="StudentDashboard.html" class="sidebar-menu-content">
-                <img src="assets/icons/home-white.svg" alt="Calendar" class="menu-icon"/>
-                Home
-            </a>
-            <a href="" class="sidebar-menu-content current">
-                <img src="assets/icons/class-blue.svg" alt="Calendar" class="menu-icon"/>
-                Classes
-            </a>
-        </div>
-        <div class="dashboard-panel">
-            <div class="dashboard-left-heading">
-                <!-- <div class="logo-student-db">
-                    <img class="logo-head" src="assets/logos/NULIPA_Logo_Blue.png" alt="NULP Logo">
-                    <div class="title-head">
-                        <p class="title-text">Super Admin</p>
-                        <p class="title-text">Dashboard</p>
-                    </div>
-                </div> -->
-                <div class="title-head">    
-                    <p class="course-title">Introduction to Computer System</p>
-                    <p class="instructor">Class Instructor: <span class="instructor instructor-name">Louie E. Gutierrez</span></p>
+
+<div class="layout-wrapper">
+    <!-- OPTIONAL: Student sidebar goes here -->
+
+    <div class="dashboard-panel">
+        <div class="page-content">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+                <div class="title-head">
+                    <h1 class="course-title">Web Programming</h1>
+                    <p class="instructor">
+                        Instructor: <span class="instructor-name">Juan Dela Cruz</span>
+                    </p>
                 </div>
-                
-                <div class="notif-info-container">
-                    <div class="notif-bell-wrapper">
-                        <img src="assets/icons/bell.svg" alt="Notifications" class="notif-bell-icon">
-                        <span class="notif-badge">17</span>
+
+                <div class="header-actions">
+                    <button class="btn btn-secondary" type="button">Exit</button>
+                </div>
+            </div>
+
+            <!-- FORM WRAPPER -->
+            <div class="builder-wrapper">
+                <form class="form-builder-card">
+
+                    <!-- FORM BANNER -->
+                    <div class="form-banner">
+                        <img src="assets/logos/NU_Logo_Header.png" alt="National University Banner">
                     </div>
 
-                    <div class="user-info">
-                        <div class="user-name-email">
-                            <p class="user-name">Stalin, Joseph</p>
-                            <p class="user-email">josephstalin@gmail.com</p>
-                        </div>
-                        <div class="user-photo-wrapper">
-                            <img src="assets/sample_user.jpg" alt="Sample User" class="user-photo">
-                            <button class="user-status-toggle">✓</button>
+                    <!-- FORM DETAILS -->
+                    <div class="form-main-details">
+                        <h2>Pre-Test Form</h2>
+                        <p>
+                            This assessment measures your understanding of the lesson.
+                            Please answer honestly. Once submitted, answers cannot be changed.
+                        </p>
+                    </div>
 
-                            <div class="profile-dropdown">
-                                <a href="index.html" class="dropdown-item logout-btn">Logout</a>
+                    <!-- SECTION 1 -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-title-group">
+                                <span class="section-badge">Section 1</span>
+                                <strong>Multiple Choice</strong>
+                            </div>
+                        </div>
+
+                        <!-- QUESTION 1 -->
+                        <div class="question-card">
+                            <div class="question-top">
+                                <span class="question-label">Question 1</span>
+                            </div>
+
+                            <p class="question-input">
+                                What does HTML stand for?
+                            </p>
+
+                            <div class="options-list">
+                                <label class="option-item">
+                                    <input type="radio" name="q1">
+                                    Hyper Text Markup Language
+                                </label>
+
+                                <label class="option-item">
+                                    <input type="radio" name="q1">
+                                    High Tech Machine Language
+                                </label>
+
+                                <label class="option-item">
+                                    <input type="radio" name="q1">
+                                    Home Tool Markup Language
+                                </label>
+
+                                <label class="option-item">
+                                    <input type="radio" name="q1">
+                                    Hyperlinks and Text Markup Language
+                                </label>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="admin-content">
 
-                
+                    <!-- SECTION 2 -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-title-group">
+                                <span class="section-badge">Section 2</span>
+                                <strong>True or False</strong>
+                            </div>
+                        </div>
 
-                </div>
+                        <!-- QUESTION 2 -->
+                        <div class="question-card">
+                            <div class="question-top">
+                                <span class="question-label">Question 2</span>
+                            </div>
+
+                            <p class="question-input">
+                                CSS is used to structure web content.
+                            </p>
+
+                            <div class="options-list true-false-list">
+                                <label class="option-item">
+                                    <input type="radio" name="q2">
+                                    True
+                                </label>
+
+                                <label class="option-item">
+                                    <input type="radio" name="q2">
+                                    False
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="builder-actions">
+                        <button class="builder-action-btn" type="submit">
+                            Submit Pre-Test
+                        </button>
+                    </div>
+
+                </form>
             </div>
+
         </div>
     </div>
+</div>
 
-    
 </body>
 </html>
+``
