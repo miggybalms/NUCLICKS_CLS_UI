@@ -4,15 +4,41 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .layout-wrapper {
+    display: flex;
+    height: 100vh;          /* fallback if 100% not set */
+    background-color: #EBEBEB;
+}
+
+.sidebar-menu {
+    flex-shrink: 0;        /* keep sidebar width fixed */
+}
+
+.dashboard-panel {
+    flex: 1;               /* take remaining space */
+    overflow-y: auto;      /* enable vertical scroll */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px 30px 20px;
+    /* height: auto – already set, keep it */
+}
+
+/* .layout-wrapper {
     display: flex;
     flex-direction: row;
     background-color: #EBEBEB;
     height: 100%;
-}
+} */
 
 /* CONTENT FOR STUDENT DASHBOARD */
-.dashboard-panel {
+/* .dashboard-panel {
     font-family: 'Poppins', sans-serif;
     padding: 30px 20px 30px 20px;
     
@@ -21,7 +47,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
+} */
 
 .dashboard-left {
   flex: 8;               
@@ -425,11 +451,10 @@
 }
 
 .add-teacher-btn {
-
     background-color: #FBD117;
     color: #303781;
     border: none;
-    border-radius: 8px;
+    border-radius: 60px;
     padding: 8px 14px;
     font-size: 13px;
     font-weight: 700;
@@ -594,7 +619,7 @@
     border: 1px solid #ccc;
     background: #f5f5f5;
     color: #333;
-    border-radius: 4px;
+    border-radius: 60px;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s ease;
@@ -660,7 +685,7 @@
     background-color: #FBD117;
     color: #303781;
     border: none;
-    border-radius: 8px;
+    border-radius: 60px;
     padding: 8px 14px;
     font-size: 13px;
     font-weight: 700;
@@ -712,7 +737,438 @@
 
 /* EVALUATION SECTION / PAGE */
 
+/* EVALUATION SECTION / PAGE */
+
+.evaluation-management {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.evaluation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.evaluation-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #303781;
+    margin: 0;
+}
+
+.create-eval-btn {
+    background-color: #FBD117;
+    color: #303781;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.create-eval-btn:hover {
+    background-color: #f6c800;
+}
+
+/* Evaluation Card */
+
+.evaluation-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.evaluation-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.evaluation-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #303781;
+    margin: 0;
+}
+
+.evaluation-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.evaluation-course {
+    font-size: 12px;
+    font-weight: 500;
+    color: #777;
+    margin: 0;
+}
+
+.evaluation-questions {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #303781;
+    line-height: 1.6;
+}
+
+.evaluation-questions p {
+    margin: 0;
+}
 
 /* COURSE SECTION / PAGE */
+/* ===== COURSE SECTION UPDATE ===== */
 
+.course-card {
+    margin: 20px 0 20px 0;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    border-left: 5px solid #2d7ff9;   /* subtle accent */ 
+}
 
+.course-card.open {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    border-left-color: #1e3a8a;
+}
+
+.course-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 20px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.course-main:hover {
+    background: #f8faff;
+}
+
+.course-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+}
+
+.chevron {
+    font-size: 18px;
+    color: #303781;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+    margin-top: 2px;
+    user-select: none;
+}
+
+.course-card.open .chevron {
+    transform: rotate(0deg);
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.course-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0;
+}
+
+.course-desc {
+    font-size: 13px;
+    color: #4b5563;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.course-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #6b7280;
+    margin: 8px 0 0;
+}
+
+.course-teacher,
+.course-topic-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.course-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 12px;
+}
+
+.course-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    padding: 0 20px;
+}
+
+.course-card.open .course-details {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 20px;
+}
+
+/* Sections inside details */
+.course-section {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #303781;
+    margin: 0 0 12px;
+}
+
+.section-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Test cards */
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.test-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.test-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.test-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 6px;
+    color: #1e293b;
+}
+
+.test-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.test-meta li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1.6;
+}
+
+/* Topics */
+.topic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.add-topic-btn {
+    background: #FBD117;
+    text-decoration: none;
+    color: #303781;
+    border: none;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-topic-btn:hover {
+    background: #f6c800;
+}
+
+.topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.topic-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.topic-item:hover {
+    background: #f8fafc;
+}
+
+.topic-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.topic-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1e293b;
+    margin: 0;
+}
+
+.topic-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.topic-badge {
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.topic-badge.published {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.topic-badge.scheduled {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Action icons (same size) */
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    background: #f1f5f9;
+}
+
+.actions-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* Stop propagation – no extra CSS needed, handled by JS */
+
+/* Create course button */
+.create-course-btn {
+    background: #303781;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.create-course-btn:hover {
+    background: #1e3a8a;
+}
+
+/* Course archived section (reuse teacher style but add course specificity) */
+.course-archived-section {
+    margin-top: 0; /* already inside a hidden container, no extra gap needed */
+}
+
+.course-card-list.archived .course-card {
+    opacity: 0.8;
+    border-left-color: #9ca3af; /* muted grey accent */
+}
+
+.course-card-list.archived .course-card:hover {
+    opacity: 1;
+}
+
+/* Ensure the archived view's archived title looks the same */
+.archived-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #303781;
+    margin-bottom: 12px;
+}
+
+/* Remove topic button */
+.remove-topic {
+    font-size: 18px;
+    color: #d93025;
+    padding: 2px 6px;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s;
+}
+.remove-topic:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.add-course-btn {
+    background-color: #FBD117;
+    color: #303781;
+    border: none;
+    border-radius: 60px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.add-course-btn:hover {
+    background-color: #f6c800;
+    color: #303781;
+}

@@ -20,20 +20,18 @@
             <a href="SuperAdmin_Course.html" class="sidebar-menu-content current"><img src="assets/icons/book-blue.svg" alt="Course" class="menu-icon"/>Courses</a>
         </div>
         <div class="dashboard-panel">
-            <!-- <div class="dashboard-left"> -->
-                <div class="dashboard-left-heading">
-                    <div class="logo-student-db">
-                        <img class="logo-head" src="assets/logos/NULIPA_Logo_Blue.png" alt="NULP Logo">
-                        <div class="title-head">
+            <div class="dashboard-left-heading">
+                <div class="logo-student-db">
+                    <img class="logo-head" src="assets/logos/NULIPA_Logo_Blue.png" alt="NULP Logo">
+                    <div class="title-head">
                         <p class="title-text">Super Admin</p>
                         <p class="title-text">Dashboard</p>
-                        </div>
                     </div>
-                    
-                    <div class="notif-info-container">
+                </div>
+                
+                <div class="notif-info-container">
                     <div class="notif-bell-wrapper">
                         <img src="assets/icons/bell.svg" alt="Notifications" class="notif-bell-icon">
-
                         <span class="notif-badge">17</span>
                     </div>
 
@@ -43,112 +41,370 @@
                             <p class="user-email">josephstalin@gmail.com</p>
                         </div>
                         <div class="user-photo-wrapper">
-                        <img src="assets/sample_user.jpg" alt="Sample User" class="user-photo">
-
+                            <img src="assets/sample_user.jpg" alt="Sample User" class="user-photo">
                             <button class="user-status-toggle">✓</button>
-
-                            <!-- DROPDOWN -->
                             <div class="profile-dropdown">
                                 <a href="index.html" class="dropdown-item logout-btn">Logout</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                </div>
-                <div class="admin-content">
-                    <!-- STATS -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon blue">👤</div>
-                            <div class="stat-info">
-                                <p class="stat-label">Total Teachers</p>
-                                <p class="stat-value">45</p>
+            <div class="admin-content">
+                <div class="course-management">
+                    <div class="student-header">
+                        <h2 class="student-title">Course Management</h2>
+                        <div class="student-actions">
+                            <div class="view-toggle">
+                                <button id="btnActiveCourses" class="toggle-btn active">Active Courses</button>
+                                <button id="btnArchivedCourses" class="toggle-btn">Archived Courses</button>
                             </div>
+                            <input type="text" class="student-search" id="courseSearch" placeholder="Search courses...">
+                            <!-- ✅ Add Course button is now an anchor -->
+                            <a href="AddCourse.html" class="add-course-btn">+ Add Course</a>
                         </div>
+                    </div>
 
-                        <div class="stat-card">
-                            <div class="stat-icon green">🎓</div>
-                            <div class="stat-info">
-                                <p class="stat-label">Total Students</p>
-                                <p class="stat-value">1,234</p>
+                    <!-- ACTIVE COURSES VIEW -->
+                    <div id="activeCourseView" class="table-view-container show">
+                        <div class="course-card-list" id="activeCourseList">
+                            <!-- Course Card 1 -->
+                            <div class="course-card open" data-course-id="1">
+                                <div class="course-main toggle-course">
+                                    <div class="course-left">
+                                        <span class="chevron">▾</span>
+                                        <div class="course-info">
+                                            <h3 class="course-name">Advanced Mathematics</h3>
+                                            <p class="course-desc">Advanced topics in mathematics including calculus and linear algebra</p>
+                                            <p class="course-meta">
+                                                <span class="course-teacher">👨‍🏫 John Doe</span>
+                                                <span class="course-topic-count">📚 3 topics</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="course-actions">
+                                        <!-- ✅ Edit button is now an anchor -->
+                                        <a href="EditCourse.html?id=1" class="icon-btn edit stop-toggle" title="Edit">
+                                            <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                                        </a>
+                                        <!-- Archive button stays as <button> -->
+                                        <button class="icon-btn archive stop-toggle" title="Archive">
+                                            <img src="assets/icons/archive-blue.svg" alt="Archive" class="actions-icon" />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="course-details">
+                                    <div class="course-section">
+                                        <h4 class="section-title">
+                                            <img src="assets/icons/test.svg" class="section-icon" alt="" />
+                                            Tests
+                                        </h4>
+                                        <div class="test-grid">
+                                            <div class="test-card">
+                                                <div class="test-info">
+                                                    <p class="test-name">Pre-Test</p>
+                                                    <ul class="test-meta">
+                                                        <li>📋 20 questions</li>
+                                                        <li>⏱ 30 mins</li>
+                                                    </ul>
+                                                </div>
+                                                <!-- ✅ Edit test button is now an anchor -->
+                                                <a href="EditTest.html?id=101" class="icon-btn edit stop-toggle" title="Edit">
+                                                    <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                                                </a>
+                                            </div>
+                                            <div class="test-card">
+                                                <div class="test-info">
+                                                    <p class="test-name">Post-Test</p>
+                                                    <ul class="test-meta">
+                                                        <li>📋 25 questions</li>
+                                                        <li>⏱ 45 mins</li>
+                                                    </ul>
+                                                </div>
+                                                <a href="EditTest.html?id=102" class="icon-btn edit stop-toggle" title="Edit">
+                                                    <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-section">
+                                        <div class="topic-header">
+                                            <h4 class="section-title">
+                                                <img src="assets/icons/topics.svg" class="section-icon" alt="" />
+                                                Topics
+                                            </h4>
+                                            <!-- ✅ Add Topic button is now an anchor -->
+                                            <a href="AddTopic.html?course=1" class="add-topic-btn stop-toggle">+ Add Topic</a>
+                                        </div>
+                                        <div class="topic-list">
+                                            <div class="topic-item">
+                                                <div class="topic-left">
+                                                    <p class="topic-name">Introduction to Calculus</p>
+                                                    <div class="topic-meta">
+                                                        <span class="topic-date">May 01, 2025</span>
+                                                        <span class="topic-badge published">Published</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Remove topic button stays as <button> -->
+                                                <button class="icon-btn remove-topic stop-toggle" title="Remove Topic">✕</button>
+                                            </div>
+                                            <div class="topic-item">
+                                                <div class="topic-left">
+                                                    <p class="topic-name">Differential Equations</p>
+                                                    <div class="topic-meta">
+                                                        <span class="topic-date">May 08, 2025</span>
+                                                        <span class="topic-badge scheduled">Scheduled</span>
+                                                    </div>
+                                                </div>
+                                                <button class="icon-btn remove-topic stop-toggle" title="Remove Topic">✕</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="stat-card">
-                            <div class="stat-icon purple">📘</div>
-                            <div class="stat-info">
-                                <p class="stat-label">Active Courses</p>
-                                <p class="stat-value">28</p>
-                            </div>
-                        </div>
+                            <!-- Course Card 2 -->
+                            <div class="course-card open" data-course-id="1">
+                                <div class="course-main toggle-course">
+                                    <div class="course-left">
+                                        <span class="chevron">▾</span>
+                                        <div class="course-info">
+                                            <h3 class="course-name">Advanced Lunch</h3>
+                                            <p class="course-desc">Advanced topics in lunch including Jollibee and McDonald's</p>
+                                            <p class="course-meta">
+                                                <span class="course-teacher">👨‍🏫 Jade Caponpon</span>
+                                                <span class="course-topic-count">📚 3 topics</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="course-actions">
+                                        <!-- ✅ Edit button is now an anchor -->
+                                        <a href="EditCourse.html?id=1" class="icon-btn edit stop-toggle" title="Edit">
+                                            <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                                        </a>
+                                        <!-- Archive button stays as <button> -->
+                                        <button class="icon-btn archive stop-toggle" title="Archive">
+                                            <img src="assets/icons/archive-blue.svg" alt="Archive" class="actions-icon" />
+                                        </button>
+                                    </div>
+                                </div>
 
-                        <div class="stat-card">
-                            <div class="stat-icon orange">📝</div>
-                            <div class="stat-info">
-                                <p class="stat-label">Pending Tests</p>
-                                <p class="stat-value">12</p>
+                                <div class="course-details">
+                                    <div class="course-section">
+                                        <h4 class="section-title">
+                                            <img src="assets/icons/test.svg" class="section-icon" alt="" />
+                                            Tests
+                                        </h4>
+                                        <div class="test-grid">
+                                            <div class="test-card">
+                                                <div class="test-info">
+                                                    <p class="test-name">Pre-Test</p>
+                                                    <ul class="test-meta">
+                                                        <li>📋 20 questions</li>
+                                                        <li>⏱ 30 mins</li>
+                                                    </ul>
+                                                </div>
+                                                <!-- ✅ Edit test button is now an anchor -->
+                                                <a href="EditTest.html?id=101" class="icon-btn edit stop-toggle" title="Edit">
+                                                    <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                                                </a>
+                                            </div>
+                                            <div class="test-card">
+                                                <div class="test-info">
+                                                    <p class="test-name">Post-Test</p>
+                                                    <ul class="test-meta">
+                                                        <li>📋 25 questions</li>
+                                                        <li>⏱ 45 mins</li>
+                                                    </ul>
+                                                </div>
+                                                <a href="EditTest.html?id=102" class="icon-btn edit stop-toggle" title="Edit">
+                                                    <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-section">
+                                        <div class="topic-header">
+                                            <h4 class="section-title">
+                                                <img src="assets/icons/topics.svg" class="section-icon" alt="" />
+                                                Topics
+                                            </h4>
+                                            <!-- ✅ Add Topic button is now an anchor -->
+                                            <a href="AddTopic.html?course=1" class="add-topic-btn stop-toggle">+ Add Topic</a>
+                                        </div>
+                                        <div class="topic-list">
+                                            <div class="topic-item">
+                                                <div class="topic-left">
+                                                    <p class="topic-name">Introduction to Calculus</p>
+                                                    <div class="topic-meta">
+                                                        <span class="topic-date">May 01, 2025</span>
+                                                        <span class="topic-badge published">Published</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Remove topic button stays as <button> -->
+                                                <button class="icon-btn remove-topic stop-toggle" title="Remove Topic">✕</button>
+                                            </div>
+                                            <div class="topic-item">
+                                                <div class="topic-left">
+                                                    <p class="topic-name">Differential Equations</p>
+                                                    <div class="topic-meta">
+                                                        <span class="topic-date">May 08, 2025</span>
+                                                        <span class="topic-badge scheduled">Scheduled</span>
+                                                    </div>
+                                                </div>
+                                                <button class="icon-btn remove-topic stop-toggle" title="Remove Topic">✕</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- RECENT ACTIVITY -->
-                    <div class="activity-card">
-                        <h3 class="activity-title">Recent Activity</h3>
-
-                        <div class="activity-item">
-                            <div>
-                                <p class="activity-main">New teacher registered</p>
-                                <p class="activity-sub">John Doe</p>
+                    <!-- ARCHIVED COURSES VIEW -->
+                    <div id="archivedCourseView" class="table-view-container">
+                        <div class="course-archived-section">
+                            <h3 class="archived-title">Archived Courses</h3>
+                            <div class="course-card-list archived" id="archivedCourseList">
+                                <!-- Archived course cards appear here -->
                             </div>
-                            <span class="activity-time">2 hours ago</span>
-                        </div>
-
-                        <div class="activity-item">
-                            <div>
-                                <p class="activity-main">Course published</p>
-                                <p class="activity-sub">Advanced Mathematics</p>
-                            </div>
-                            <span class="activity-time">4 hours ago</span>
-                        </div>
-
-                        <div class="activity-item">
-                            <div>
-                                <p class="activity-main">Student enrolled</p>
-                                <p class="activity-sub">Jane Smith</p>
-                            </div>
-                            <span class="activity-time">5 hours ago</span>
-                        </div>
-
-                        <div class="activity-item">
-                            <div>
-                                <p class="activity-main">Evaluation submitted</p>
-                                <p class="activity-sub">Chemistry Course</p>
-                            </div>
-                            <span class="activity-time">2 days ago</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-    const userProfile = document.querySelector('.user-photo-wrapper');
-    const dropdown = document.querySelector('.profile-dropdown');
+        // Profile dropdown (unchanged)
+        const userProfile = document.querySelector('.user-photo-wrapper');
+        const dropdown = document.querySelector('.profile-dropdown');
+        userProfile.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('active');
+        });
 
-    userProfile.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('active');
-    });
+        // Collapse / expand course cards
+        document.querySelectorAll('.toggle-course').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.closest('.course-card');
+                card.classList.toggle('open');
+            });
+        });
 
-    document.addEventListener('click', () => {
-    dropdown.classList.remove('active');
-    });
+        // Prevent toggle when clicking action buttons / links
+        document.querySelectorAll('.stop-toggle').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
 
+        /* =========================================
+           COURSE TOGGLE & ARCHIVE / RESTORE LOGIC
+        ========================================= */
+        const activeCourseList = document.getElementById('activeCourseList');
+        const archivedCourseList = document.getElementById('archivedCourseList');
+
+        // Toggle between Active / Archived views
+        const btnActive = document.getElementById('btnActiveCourses');
+        const btnArchived = document.getElementById('btnArchivedCourses');
+        const activeView = document.getElementById('activeCourseView');
+        const archivedView = document.getElementById('archivedCourseView');
+
+        btnActive.addEventListener('click', () => {
+            activeView.classList.add('show');
+            archivedView.classList.remove('show');
+            btnActive.classList.add('active');
+            btnArchived.classList.remove('active');
+        });
+
+        btnArchived.addEventListener('click', () => {
+            archivedView.classList.add('show');
+            activeView.classList.remove('show');
+            btnArchived.classList.add('active');
+            btnActive.classList.remove('active');
+        });
+
+        // Archive, restore, and remove-topic actions (edit is now a pure link)
+        document.addEventListener('click', function (e) {
+            const btn = e.target.closest('.icon-btn');
+            if (!btn) return;
+
+            // Remove topic (button only)
+            if (btn.classList.contains('remove-topic')) {
+                const topicItem = btn.closest('.topic-item');
+                const topicName = topicItem.querySelector('.topic-name').innerText;
+                if (confirm(`Remove topic "${topicName}"?`)) {
+                    topicItem.remove();
+                }
+                return;
+            }
+
+            const card = btn.closest('.course-card');
+            if (!card) return;
+
+            // ARCHIVE course
+            if (btn.classList.contains('archive')) {
+                const name = card.querySelector('.course-name').innerText;
+                if (!confirm(`Archive "${name}"?`)) return;
+
+                card.classList.remove('open');
+                const actionsDiv = card.querySelector('.course-actions');
+                // Replace with Restore button (keep original edit link? No, we replace entire actions)
+                actionsDiv.innerHTML = `
+                    <button class="icon-btn restore stop-toggle" title="Restore">
+                        <img src="assets/icons/restore-blue.svg" alt="Restore" class="actions-icon" />
+                    </button>
+                `;
+                archivedCourseList.appendChild(card);
+                return;
+            }
+
+            // RESTORE course
+            if (btn.classList.contains('restore')) {
+                const name = card.querySelector('.course-name').innerText;
+                if (!confirm(`Restore "${name}"?`)) return;
+
+                const courseId = card.dataset.courseId;
+                const actionsDiv = card.querySelector('.course-actions');
+                // Restore original Edit link + Archive button
+                actionsDiv.innerHTML = `
+                    <a href="EditCourse.html?id=${courseId}" class="icon-btn edit stop-toggle" title="Edit">
+                        <img src="assets/icons/edit-blue.svg" alt="Edit" class="actions-icon" />
+                    </a>
+                    <button class="icon-btn archive stop-toggle" title="Archive">
+                        <img src="assets/icons/archive-blue.svg" alt="Archive" class="actions-icon" />
+                    </button>
+                `;
+                activeCourseList.appendChild(card);
+
+                // Re‑attach stop‑propagation to new elements
+                card.querySelectorAll('.stop-toggle').forEach(el => {
+                    el.addEventListener('click', e => e.stopPropagation());
+                });
+                return;
+            }
+        });
+
+        // Search courses (inside visible view)
+        const searchInput = document.getElementById('courseSearch');
+        searchInput.addEventListener('input', function () {
+            const filter = this.value.toLowerCase();
+            const visibleView = document.querySelector('.table-view-container.show');
+            if (!visibleView) return;
+            const cards = visibleView.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const text = card.querySelector('.course-name').innerText.toLowerCase();
+                card.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
     </script>
-
-
 </body>
 </html>
