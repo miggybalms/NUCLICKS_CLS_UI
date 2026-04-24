@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | NUCLICKS</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/SuperAdmin.css">
+    <link rel="icon" href="assets/logos/NU_ICON_Blue.png">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <div class="sidebar-menu">
+            <img class="sidebar-menu-icon" src="assets/logos/NU_ICON_White.png" alt="NULP Logo">
+            <a href="" class="sidebar-menu-content current"><img src="assets/icons/home-blue.svg" alt="Calendar" class="menu-icon"/>Home</a>
+            <a href="" class="sidebar-menu-content"><img src="assets/icons/class-white.svg" alt="Calendar" class="menu-icon"/>Evaluation</a>
+            <a href="" class="sidebar-menu-content"><img src="assets/icons/people-white.svg" alt="Calendar" class="menu-icon"/>Teachers</a>
+            <a href="" class="sidebar-menu-content"><img src="assets/icons/grad-white.svg" alt="Calendar" class="menu-icon"/>Students</a>
+            <a href="" class="sidebar-menu-content"><img src="assets/icons/book-white.svg" alt="Calendar" class="menu-icon"/>Courses</a>
+        </div>
+        <div class="dashboard-panel">
+            <div class="dashboard-left">
+                <div class="dashboard-left-heading">
+                    <div class="logo-student-db">
+                        <img class="logo-head" src="assets/logos/NULIPA_Logo_Blue.png" alt="NULP Logo">
+                        <div class="title-head">
+                        <p class="title-text">Super Admin</p>
+                        <p class="title-text">Dashboard</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="admin-content">
+                    <!-- STATS -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">👤</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Total Teachers</p>
+                                <p class="stat-value">45</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon green">🎓</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Total Students</p>
+                                <p class="stat-value">1,234</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon purple">📘</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Active Courses</p>
+                                <p class="stat-value">28</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon orange">📝</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Pending Tests</p>
+                                <p class="stat-value">12</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RECENT ACTIVITY -->
+                    <div class="activity-card">
+                        <h3 class="activity-title">Recent Activity</h3>
+
+                        <div class="activity-item">
+                            <div>
+                                <p class="activity-main">New teacher registered</p>
+                                <p class="activity-sub">John Doe</p>
+                            </div>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <div>
+                                <p class="activity-main">Course published</p>
+                                <p class="activity-sub">Advanced Mathematics</p>
+                            </div>
+                            <span class="activity-time">4 hours ago</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <div>
+                                <p class="activity-main">Student enrolled</p>
+                                <p class="activity-sub">Jane Smith</p>
+                            </div>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <div>
+                                <p class="activity-main">Evaluation submitted</p>
+                                <p class="activity-sub">Chemistry Course</p>
+                            </div>
+                            <span class="activity-time">2 days ago</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dashboard-right">
+                <div class="notif-info-container">
+                    <div class="notif-bell-wrapper">
+                        <img src="assets/icons/bell.svg" alt="Notifications" class="notif-bell-icon">
+
+                        <span class="notif-badge">17</span>
+                    </div>
+
+                    <div class="user-info">
+                        <div class="user-name-email">
+                            <p class="user-name">Stalin, Joseph</p>
+                            <p class="user-email">josephstalin@gmail.com</p>
+                        </div>
+                        <div class="user-photo-wrapper">
+                        <img src="assets/sample_user.jpg" alt="Sample User" class="user-photo">
+
+                            <button class="user-status-toggle">✓</button>
+
+                            <!-- DROPDOWN -->
+                            <div class="profile-dropdown">
+                                <a href="index.html" class="dropdown-item logout-btn">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const userProfile = document.querySelector('.user-photo-wrapper');
+    const dropdown = document.querySelector('.profile-dropdown');
+
+    userProfile.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+    dropdown.classList.remove('active');
+    });
+
+    </script>
+
+
+</body>
+</html>
